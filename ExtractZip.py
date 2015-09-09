@@ -59,7 +59,7 @@ def copy_code_to_final(student_name):
         for file_name in files:
             if os.path.isdir(file_name):
                 os.chdir(file_name)
-            elif os.path.isfile(file_name):
+            elif os.path.isfile(file_name) and file_name.endswith('.java'):
                 post_code_into_final_file(student_name, get_code_from_file(file_name))
                 print file_name
                 please_break = True
