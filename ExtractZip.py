@@ -3,7 +3,7 @@ import sys
 import zipfile
 import os
 
-FINAL_FILE_PATH = '/home/paranjay/Downloads/CSE1223/projects/project03/final.txt'
+FINAL_FILE_PATH = ''
 
 """
 # extract zip
@@ -72,6 +72,8 @@ def copy_code_to_final(student_name):
 
 
 def run():
+    global FINAL_FILE_PATH
+    FINAL_FILE_PATH = os.path.join(os.getcwd(), 'final.txt')
     if not os.path.exists('current'):
         os.mkdir('current')
     os.chdir('current')
