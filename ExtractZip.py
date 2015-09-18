@@ -3,7 +3,7 @@ import sys
 import zipfile
 import os
 
-FINAL_FILE_PATH = '/home/paranjay/Downloads/CSE1223/project01/final.txt'
+FINAL_FILE_PATH = '/home/paranjay/Downloads/CSE1223/projects/project03/final.txt'
 
 """
 # extract zip
@@ -38,7 +38,7 @@ def get_code_from_file(code_file):
 
 def post_code_into_final_file(name, code):
     if not os.path.exists(FINAL_FILE_PATH):
-        f = open(FINAL_FILE_PATH, 'a')
+        f = open(FINAL_FILE_PATH, 'w')
     else:
         f = open(FINAL_FILE_PATH, 'a')
     f.write('AUTHOR' + '\n')
@@ -72,6 +72,8 @@ def copy_code_to_final(student_name):
 
 
 def run():
+    if not os.path.exists('current'):
+        os.mkdir('current')
     os.chdir('current')
     zip_file_name = sys.argv[1]
     extract_zip(zip_file_name)
