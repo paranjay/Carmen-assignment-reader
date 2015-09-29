@@ -63,7 +63,7 @@ def copy_code_to_final(student_name):
                 post_code_into_final_file(student_name, get_code_from_file(file_name))
                 please_break = True
             elif os.path.isfile(file_name) and not file_name.endswith('.java'):
-                please_break = True
+                please_break = False
                 print file_name
 
 
