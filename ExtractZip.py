@@ -65,6 +65,9 @@ def copy_code_to_final(student_name):
             elif os.path.isfile(file_name) and not file_name.endswith('.java'):
                 please_break = False
                 print file_name
+            elif os.path.isfile(file_name) and file_name.endswith('.class'):
+                please_break = True
+                print student_name + ' ' + file_name
 
 
         if please_break:
